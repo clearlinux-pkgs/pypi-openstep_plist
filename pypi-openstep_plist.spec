@@ -5,12 +5,13 @@
 #
 Name     : pypi-openstep_plist
 Version  : 0.3.0.post1
-Release  : 1
+Release  : 2
 URL      : https://files.pythonhosted.org/packages/8b/91/93e85357548eb41a699854d8ac6054c7c0736d73999dd2708bd3257a4acf/openstep_plist-0.3.0.post1.zip
 Source0  : https://files.pythonhosted.org/packages/8b/91/93e85357548eb41a699854d8ac6054c7c0736d73999dd2708bd3257a4acf/openstep_plist-0.3.0.post1.zip
 Summary  : ASCII plist parser written in Cython
 Group    : Development/Tools
 License  : MIT
+Requires: pypi-openstep_plist-license = %{version}-%{release}
 Requires: pypi-openstep_plist-python = %{version}-%{release}
 Requires: pypi-openstep_plist-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
@@ -31,6 +32,14 @@ BuildRequires : python3-dev
 [![Github CI Status](https://github.com/fonttools/openstep-plist/workflows/Wheels/badge.svg)](https://github.com/fonttools/openstep-plist/actions?query=workflow%3A%22Wheels%22)
 [![codecov](https://codecov.io/gh/fonttools/openstep-plist/branch/master/graph/badge.svg)](https://codecov.io/gh/fonttools/openstep-plist)
 [![PyPI](https://img.shields.io/pypi/v/openstep-plist.svg)](https://pypi.org/project/openstep-plist/)
+
+%package license
+Summary: license components for the pypi-openstep_plist package.
+Group: Default
+
+%description license
+license components for the pypi-openstep_plist package.
+
 
 %package python
 Summary: python components for the pypi-openstep_plist package.
@@ -63,7 +72,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1683819241
+export SOURCE_DATE_EPOCH=1685552586
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -87,6 +96,8 @@ popd
 %install
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/pypi-openstep_plist
+cp %{_builddir}/openstep_plist-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-openstep_plist/c0c34cd02b851a2f0f62d449b9f976998de993dc || :
 pip install --root=%{buildroot} --no-deps --ignore-installed dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -103,6 +114,10 @@ popd
 
 %files
 %defattr(-,root,root,-)
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/pypi-openstep_plist/c0c34cd02b851a2f0f62d449b9f976998de993dc
 
 %files python
 %defattr(-,root,root,-)
