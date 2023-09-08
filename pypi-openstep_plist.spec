@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-openstep_plist
-Version  : 0.3.0.post1
-Release  : 2
-URL      : https://files.pythonhosted.org/packages/8b/91/93e85357548eb41a699854d8ac6054c7c0736d73999dd2708bd3257a4acf/openstep_plist-0.3.0.post1.zip
-Source0  : https://files.pythonhosted.org/packages/8b/91/93e85357548eb41a699854d8ac6054c7c0736d73999dd2708bd3257a4acf/openstep_plist-0.3.0.post1.zip
+Version  : 0.3.1
+Release  : 3
+URL      : https://files.pythonhosted.org/packages/49/97/b468f8e1b09786be9decaec574215fd7c4358977b4e9be2464cb799fc9de/openstep_plist-0.3.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/49/97/b468f8e1b09786be9decaec574215fd7c4358977b4e9be2464cb799fc9de/openstep_plist-0.3.1.tar.gz
 Summary  : ASCII plist parser written in Cython
 Group    : Development/Tools
 License  : MIT
@@ -23,7 +23,6 @@ BuildRequires : pypi-pluggy
 BuildRequires : pypi-pytest
 BuildRequires : pypi-tox
 BuildRequires : pypi-virtualenv
-BuildRequires : python3-dev
 # Suppress stripping binaries
 %define __strip /bin/true
 %define debug_package %{nil}
@@ -61,10 +60,10 @@ python3 components for the pypi-openstep_plist package.
 
 
 %prep
-%setup -q -n openstep_plist-0.3.0.post1
-cd %{_builddir}/openstep_plist-0.3.0.post1
+%setup -q -n openstep_plist-0.3.1
+cd %{_builddir}/openstep_plist-0.3.1
 pushd ..
-cp -a openstep_plist-0.3.0.post1 buildavx2
+cp -a openstep_plist-0.3.1 buildavx2
 popd
 
 %build
@@ -72,7 +71,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1685552586
+export SOURCE_DATE_EPOCH=1694188578
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
