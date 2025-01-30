@@ -1,5 +1,5 @@
 PKG_NAME := pypi-openstep_plist
-URL = https://files.pythonhosted.org/packages/9c/36/edffefa5f2f679fc7c146303c035fc18b015a1c5b7c48b5beb2d53abc2b9/openstep_plist-0.4.0.tar.gz
+URL = https://files.pythonhosted.org/packages/1e/01/e55052a0abf3b527e199c440fba4eeacd647fe14a31ed076ce17daccc28f/openstep_plist-0.5.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
