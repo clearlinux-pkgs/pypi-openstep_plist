@@ -7,7 +7,7 @@
 #
 Name     : pypi-openstep_plist
 Version  : 0.5.0
-Release  : 9
+Release  : 10
 URL      : https://files.pythonhosted.org/packages/1e/01/e55052a0abf3b527e199c440fba4eeacd647fe14a31ed076ce17daccc28f/openstep_plist-0.5.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/1e/01/e55052a0abf3b527e199c440fba4eeacd647fe14a31ed076ce17daccc28f/openstep_plist-0.5.0.tar.gz
 Summary  : ASCII plist parser written in Cython
